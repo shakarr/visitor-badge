@@ -46,4 +46,4 @@ MONGODB_DOCKER_PORT=27017
 
 You can change the content of the variables to your liking, but make sure that they match the names in the docker-compose.yml file, and that the values ​​in the connection string are correct with what you have put in the mongo variables.
 
-Once this is set up, you just need to do a ``docker-compose up -d`` and a ``npm start`` to run the project.
+Once this is set up, you just need to do a ``docker-compose up -d`` and a ``npm i`` ``npm start`` to run the project.
