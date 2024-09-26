@@ -45,13 +45,15 @@ export const createOrIncrementCounter = async (req, res) => {
     );
 
     // Generar el badge SVG con el valor actualizado del contador
-    const badgeSvg = generateBadgeSvg(
-      `visitors`,
-      `${counter.value}`
-    );
+    const badgeSvg = generateBadgeSvg(`visitors`, `${counter.value}`);
 
     // Devolver el badge SVG
-    res.setHeader('Cache-Control', 'no-cache,max-age=0,no-store,s-maxage=0');
+    res.setHeader(
+      "Cache-Control",
+      "no-store, no-cache, must-revalidate, proxy-revalidate"
+    );
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", "0");
     res.setHeader("Content-Type", "image/svg+xml");
     res.send(badgeSvg);
   } catch (error) {
