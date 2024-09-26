@@ -51,7 +51,7 @@ export const createOrIncrementCounter = async (req, res) => {
     );
 
     // Devolver el badge SVG
-    res.setHeader('Cache-Control', 'no-store');
+    res.setHeader('Cache-Control', 'no-cache,max-age=0,no-store,s-maxage=0');
     res.setHeader("Content-Type", "image/svg+xml");
     res.send(badgeSvg);
   } catch (error) {
